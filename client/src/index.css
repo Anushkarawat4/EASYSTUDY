@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Silkscreen font globally */
+body {
+  font-family: 'Silkscreen', cursive;
+}
+
+/* Grid background with light purple color */
+.bg-grid {
+  background-color: #d0bdf4; /* Light purple */
+  background-image: linear-gradient(#ffffff 1px, transparent 1px),
+                    linear-gradient(to right, #ffffff 1px, transparent 1px);
+  background-size: 20px 20px; /* Grid size */
+}
+
+/* Typing animation for the tagline */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing-animation {
+  display: flow-root;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  animation: typing 6s steps(40, end) 1, blink 0.75s step-end infinite;
+}

@@ -1,0 +1,15 @@
+Node.js
+
+node_modules/ package-lock.json
+
+Environment variables
+
+.env
+
+Vite/React build output
+
+dist/ build/
+
+Temporary files
+
+.DS_Store *.log

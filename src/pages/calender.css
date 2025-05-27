@@ -1,0 +1,165 @@
+/* src/pages/calendar.css */
+
+/* Layout */
+.calendar-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 80px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* PomodoroSticky assumed already styled separately */
+
+/* Task list left side */
+.task-sidebar {
+  background-color: #fff0f5;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 250px;
+  min-width: 200px;
+  box-shadow: 0 8px 15px rgba(255, 192, 203, 0.3);
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.task-list li {
+  background-color: #ffeef3;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.no-tasks {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Calendar section */
+.calendar-container {
+  background-color: #fffafc;
+  border: 3px dashed #ffb6c1;
+  padding: 20px;
+  border-radius: 25px;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+  text-align: center;
+}
+
+.calendar-title {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff69b4;
+}
+
+/* Remove red underline under weekday labels */
+abbr[title] {
+  text-decoration: none !important;
+}
+
+/* Calendar custom look */
+.kawaii-calendar {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.react-calendar__tile--now {
+  background: #ffb6c1 !important;
+  color: white !important;
+}
+
+.react-calendar__tile--active {
+  background: #ff69b4 !important;
+  color: white !important;
+  border-radius: 12px;
+}
+
+.dot-marker {
+  height: 8px;
+  width: 8px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 2px;
+}
+
+/* Task input below calendar */
+.task-input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-input input {
+  padding: 10px;
+  border: 2px solid #ffb6c1;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.task-input button {
+  padding: 10px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-input button:hover {
+  transform: scale(1.05);
+  background-color: #ff1493;
+}
+
+/* Profile top-left */
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/* Category color styles for task items */
+
+.task-item {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* Work - Blue */
+.category-work {
+  background-color: #007bff;
+}
+
+/* Home - Green */
+.category-home {
+  background-color: #28a745;
+}
+
+/* Shopping - Orange */
+.category-shopping {
+  background-color: #fd7e14;
+}
+
+/* Fitness - Purple */
+.category-fitness {
+  background-color: #6f42c1;
+}
+
+/* Other - Gray */
+.category-other {
+  background-color: #6c757d;
+}

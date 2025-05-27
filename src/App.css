@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+ 
+  
+}
+.bg-grid {
+  background-color: #d0bdf4; /* Light purple */
+  background-image: 
+    linear-gradient(#ffffff 1px, transparent 1px),
+    linear-gradient(to right, #ffffff 1px, transparent 1px);
+  background-size: 20px 20px; /* Grid size */
+}
+
+.top-bar {
+  padding: 1rem;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  padding: 1rem;
+  gap: 1.5rem; /* similar to space-x-6 */
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.todo-area {
+  flex: 1;
+}
+
+.todo-list-container {
+  background: #f9f7ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(176, 161, 255, 0.25);
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.todo-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #6c4bff;
+  text-align: center;
+}
+
+.todo-input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid #d0bdf4;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: #6c4bff;
+  box-shadow: 0 0 5px #6c4bff;
+}
+
+.add-task-btn {
+  background-color: #6c4bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #5234d1;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background: white;
+  border-radius: 10px;
+  padding:20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(176, 161, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #b2a8ff;
+}
+
+.todo-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #ff5c5c;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ff0000;
+}
+.subtask-list {
+  margin-left: 25px;
+  padding-left: 10px;
+  border-left: 2px dashed #d0bdf4;
+}
+
+.subtask-item {
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin: 4px 0;
+}
+
+.subtask-item.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.todo-area {
+  width: 500px;
+  height: 500px;
+  
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow-y: auto;
+  margin: 50px auto;
+  position: relative;
+  left: 50px; /* Push slightly right */
+}
+
+/* Optional: make scrollbar pretty */
+.todo-area::-webkit-scrollbar {
+  width: 8px;
+}
+.todo-area::-webkit-scrollbar-thumb {
+  background-color: #c68dd3;
+  border-radius: 10px;
+}
+.todo-area::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+
+.todo-center-wrapper {
+  width: 100%;
+  max-width: 700px;
+}
+/* Pomodoro sticky note styles */
+.pomodoro-sticky {
+  background: #fff8b5; /* sticky note yellow */
+  padding: 1.5rem;
+  width: 220px;
+  border: 2px solid #f0e68c;
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.15);
+  transform: rotate(-2deg);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  border-radius: 8px;
+  user-select: none;
+
+  /* Position middle-left */
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%) rotate(-2deg);
+  z-index: 100;
+}
+
+/* Timer display */
+.timer-display {
+  font-size: 3rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Buttons */
+.timer-buttons button {
+  background-color: #d0bdf4;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.timer-buttons button:hover {
+  background-color: #a293d8;
+}
+
+/* Profile icon container fixed top-left */
+.profile-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 110;
+  cursor: pointer;
+}
+
+/* Simple circle for profile */
+.profile-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #d0bdf4;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #3a2f74;
+  user-select: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body, .subjects-page, input, button, h2, h3, p, ul, li {
+  font-family: 'Baloo 2', cursive, sans-serif;
+  /* Optional: add a bit of letter spacing and line height for better feel */
+  letter-spacing: 0.03em;
+  line-height: 1.4;
 }

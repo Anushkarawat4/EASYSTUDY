@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +22,20 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+Node.js
+
+node_modules/ package-lock.json
+
+Environment variables
+
+.env
+
+Vite/React build output
+
+dist/ build/
+
+Temporary files
+
+.DS_Store *.log
+>>>>>>> d2f4367d330f85d2d2807c4d3dd0494814c9edd8
